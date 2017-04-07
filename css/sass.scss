@@ -1,0 +1,344 @@
+// Seymur
+@mixin square($sizeW, $sizeH) {
+    width: $sizeW;
+    height: $sizeH;
+}
+
+$display:1170px;
+//my mixins an varables
+.boxed {
+    width: $display;
+    margin: 0 auto;
+    .author {
+        padding-top: 40px;
+        font-size: 16px;
+        color: #666;
+    }
+}
+
+.title .name {
+    font-size: 36px;
+    span {
+        font-weight: bolder;
+    }
+}
+
+.contentMIddle .featuredWork {
+    .title {
+        .name {
+            float: left;
+            p {
+                margin-top: 70px;
+                margin-bottom: 30px;
+            }
+        }
+        .element {
+            height: 50px;
+        }
+        .button {
+            margin: 50px 2px;
+            padding: 20px 30px;
+            ;
+            font-weight: bold;
+            font-size: 20px;
+            border: 3px solid #ccc;
+            background: transparent;
+            color: #ccc;
+            float: right;
+            transition: all 0.3s ease-in-out;
+            &:hover {
+                color: black;
+                border: 3px solid black;
+                background: transparent;
+            }
+        }
+    }
+    .boxed {
+        display: flex;
+        justify-content: space-between;
+        img {
+            filter: grayscale(100%);
+            opacity: 0.5;
+            transition: 0.5s ease-out;
+            margin-bottom: 70px;
+            &:hover {
+                filter: grayscale(0%);
+                opacity: 1;
+            }
+        }
+    }
+    .ourteam {
+        background-image: url('../img/team.jpg');
+        .teamslider {
+            width: $display;
+            overflow: hidden;
+            margin: 0 auto;
+            .team {
+                padding-bottom: 70px;
+                overflow: hidden;
+                width: 7000px;
+                position: relative;
+                display: block;
+                right: 0;
+                .imgteam {
+                    @include square(390px,
+                    390px);
+                    float: left;
+                    img {
+                        filter: grayscale(0%);
+                        opacity: 1;
+                        margin-right: 21px;
+                        float: left;
+                    }
+                    .layotteam {
+                        @include square(370px,
+                        370px);
+                        background: black;
+                        opacity: 0;
+                        float: left;
+                        margin-right: 21px;
+                        position: absolute;
+                        h1 {
+                            color: white;
+                            transition: all 0.3s;
+                            position: absolute;
+                            top: 0;
+                            left: 35%;
+                            opacity: 0;
+                            font-size: 28px;
+                        }
+                        h5 {
+                            color: #333;
+                            position: absolute;
+                            left: 45%;
+                            top: 0;
+                            font-size: 18px;
+                            transition: all 0.3s;
+                            opacity: 0;
+                        }
+                        i {
+                            color: #333;
+                            border: 3px solid #333;
+                            border-radius: 100%;
+                            padding: 20px;
+                            margin-right: 10px;
+                            float: left;
+                            margin-left: 11%;
+                            margin-top: 300px;
+                            opacity: 0;
+                            transition: all 0.3s;
+                            &:hover {
+                                color: white;
+                                border-color: white;
+                                transition: 0.3s ease-in;
+                            }
+                        }
+                    }
+                }
+            }
+            .title .name {
+                padding-top: 30px;
+                p {
+                    font-size: 32px;
+                    margin-top: 30px;
+                }
+                span {
+                    font-weight: bolder;
+                }
+            }
+        }
+        .portfolio {
+            padding-top: 50px;
+            padding-bottom: 50px;
+            background-attachment: fixed fixed;
+            z-index: 2;
+            margin-bottom: 70px;
+            .photos {
+                i {
+                    position: absolute;
+                    bottom: 0;
+                    left: 40%;
+                    opacity: 0;
+                    transition: all 0.3s;
+                }
+                .layots {
+                    background: transparent;
+                    @include square(390px,
+                    240px);
+                    position: absolute;
+                    bottom: 210px;
+                    i {
+                        position: absolute;
+                        color: #333;
+                        opacity: 0;
+                        left: 40%;
+                        bottom: 0%;
+                        &:hover {
+                            color: white;
+                            cursor: pointer;
+                        }
+                    }
+                }
+                .photofirst {
+                    margin-right: 20px;
+                    height: 400px;
+                }
+                .photofirst {
+                    height: 400px;
+                }
+                .photothird {
+                    margin-left: 20px;
+                    height: 400px;
+                }
+                img {
+                    filter: grayscale(0%);
+                    opacity: 1;
+                    @include square(390px,
+                    240px);
+                    margin: 0;
+                    position: relative;
+                }
+                a {
+                    font-weight: 300;
+                    line-height: 34px;
+                    font-size: 24px;
+                    color: #333;
+                    text-decoration: none;
+                }
+                ul {
+                    list-style: none;
+                    text-align: left;
+                    margin: 0;
+                    padding-left: 0;
+                    li {
+                        display: inline;
+                        color: #ccc;
+                        a {
+                            padding-right: 10px;
+                            font-weight: 300;
+                            font-size: 14px;
+                            color: #ccc;
+                            transition: 0.3s ease-out;
+                            &:hover {
+                                color: black;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .galleryHead {
+            width: $display;
+            overflow: hidden;
+            margin: 0 auto;
+        }
+        .gallery {
+            width: 7925px;
+            position: relative;
+            right: 0;
+            .pic {
+                transition: 0.3s ease-in-out;
+                background-size: 295.5px;
+                @include square(292.5px,
+                222px);
+                margin-bottom: 50px;
+                position: relative;
+                background-repeat: no-repeat;
+                float: left;
+                .layot {
+                    background: transparent;
+                    height: 222px;
+                    position: relative;
+                    i {
+                        position: absolute;
+                        color: #333;
+                        opacity: 0;
+                        left: 40%;
+                        bottom: 0%;
+                        &:hover {
+                            color: white;
+                            cursor: pointer;
+                        }
+                    }
+                    .titleName h1 {
+                        color: white;
+                        font-size: 30px;
+                        position: absolute;
+                        left: 20%;
+                        opacity: 0;
+                        top: 0;
+                        transition: all 0.3s;
+                    }
+                }
+                &:hover {
+                    transform: scale(0.95)
+                }
+            }
+            .pic:first-child {
+                background-image: url('../img/1.jpg')
+            }
+            .pic:nth-child(2) {
+                background-image: url('../img/2.jpg')
+            }
+            .pic:nth-child(3) {
+                background-image: url('../img/3.jpg')
+            }
+            .pic:nth-child(4) {
+                background-image: url('../img/4.jpg')
+            }
+            .pic:nth-child(5) {
+                background-image: url('../img/5.jpg')
+            }
+            .pic:nth-child(6) {
+                background-image: url('../img/6.jpg')
+            }
+            .pic:nth-child(7) {
+                background-image: url('../img/7.jpg')
+            }
+        }
+    }
+    .aboutus {
+        margin-top: 30px;
+        .contenttext {
+            p {
+                font-weight: 300;
+                line-height: 38px;
+                font-size: 26px;
+                color: #333;
+                margin: 0;
+            }
+            .contenttextss {
+                width: 7000px;
+                margin: 0 auto;
+                position: relative;
+                transition: all 800ms ease;
+                right: 0;
+            }
+            width: $display;
+            overflow: hidden;
+            .firsttext {
+                width: $display;
+                float: left;
+                transition: all 800ms ease;
+            }
+        }
+        .title .name p {
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+        .points {
+            margin: 40px 0;
+            i {
+                cursor: pointer;
+                font-size: 20px;
+                background: transparent;
+                border-radius: 100%;
+                width: 20px;
+                margin-right: 15px;
+                &:first-child {
+                    background: black;
+                }
+            }
+        }
+    }
+}
